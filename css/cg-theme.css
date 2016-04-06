@@ -1,0 +1,104 @@
+@import url(https://fonts.googleapis.com/css?family=Fira+Sans:400,300,500,300italic);
+
+html, body {
+  font-size: 26pt;
+}
+
+h1, h2, h3, h4, h5, h6, p, ul, ol, li {
+  text-align: left;
+  font-family: 'Fira Sans', sans-serif !important;
+  color: #2D3E4F !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+
+  font-weight: 400 !important;
+
+}
+
+p, ul, ol, li, span {
+
+  font-weight: 300 !important;
+
+}
+
+p, ul, ol, li {
+  font-size: 0.8rem !important;
+}
+
+ul, ol {
+
+  display: block !important;
+  margin-left: 2em !important;
+
+}
+
+li, p {
+
+  line-height: 1.8em !important;
+
+}
+
+span.bold {
+  font-weight: 400 !important;
+}
+
+span.italic {
+  font-style: italic !important;
+}
+
+pre {
+
+  background-color: #f2f2f2 !important;
+  border-radius: 5px !important;
+  box-shadow: none !important;
+  padding-left: 20px !important;
+  font-size: 0.5rem !important;
+
+}
+
+
+
+
+
+.reveal {
+    background-color: #fbfbfb !important;
+}
+
+
+.reveal .progress span {
+  background: #47D591 !important;
+}
+
+.reveal .controls .navigate-up,
+.reveal .controls .navigate-up.enabled {
+  border-bottom-color: #47D591 !important;
+}
+
+.reveal .controls .navigate-down,
+.reveal .controls .navigate-down.enabled {
+  border-top-color: #47D591 !important;
+}
+
+.reveal .controls .navigate-left,
+.reveal .controls .navigate-left.enabled {
+  border-right-color: #47D591 !important;
+}
+
+.reveal .controls .navigate-right,
+.reveal .controls .navigate-right.enabled {
+  border-left-color: #47D591 !important;
+}
+
+#twitter {
+
+  /*height: 600px !important;*/
+  top: 25px !important;
+
+}
+
+.twitter-timeline {
+
+  max-height: 500px !important;
+
+}
