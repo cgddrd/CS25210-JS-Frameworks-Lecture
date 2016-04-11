@@ -1,124 +1,135 @@
 <!doctype html>
 <html lang="en">
 
-	<head>
-		<meta charset="utf-8">
+<head>
+	<meta charset="utf-8">
 
-		<title>reveal.js – The HTML Presentation Framework</title>
+	<title>reveal.js – The HTML Presentation Framework</title>
 
-		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-		<meta name="author" content="Hakim El Hattab">
+	<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+	<meta name="author" content="Hakim El Hattab">
 
-		<meta name="apple-mobile-web-app-capable" content="yes">
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/white.css" id="theme">
-		<link rel="stylesheet" href="css/cg-theme.css">
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/white.css" id="theme">
+	<link rel="stylesheet" href="css/cg-theme.css">
 
-		<!-- Code syntax highlighting -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+	<!-- Code syntax highlighting -->
+	<link rel="stylesheet" href="lib/css/zenburn.css">
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
+	</script>
 
 
 
-		<!--[if lt IE 9]>
+	<!--[if lt IE 9]>
 		<script src="lib/js/html5shiv.js"></script>
 		<![endif]-->
-	</head>
+</head>
 
-	<body>
+<body>
 
-		<div class="reveal">
+	<div class="reveal">
 
-			<!-- Any section element inside of this container is displayed as a slide -->
-			<div class="slides">
-				<section>
-					<h2>Javascript Frameworks &amp; Libraries</h2>
-					<h4>CS25210 - Client Side Graphics Programming For the Web</h4>
+		<!-- Any section element inside of this container is displayed as a slide -->
+		<div class="slides">
+			<section>
+				<h2>Javascript Frameworks &amp; Libraries</h2>
+				<h4>CS25210 - Client Side Graphics Programming For the Web</h4>
+				<p>
+					<small><a href="http://cgddrd.me">Connor Goddard</a> / <a href="http://twitter.com/cgddrd">@cgddrd</a></small>
+				</p>
+				<p>
+					<small>Based on original material by <a href="mailto:hmd1@aber.ac.uk">Hannah Dee</a>.</small>
+				</p>
+			</section>
+
+			<section>
+				<h2>Welcome</h2>
+				<p>
+					For anyone who doesn't know me, I'm <a href="http://cgddrd.me">Connor</a>.
+				</p>
+
+				<p>
+					In this session, we'll aim to cover:
+				</p>
+
+				<ul>
+					<li>Javascript frameworks &amp; libraries - why do we need them?</li>
+					<li>A gentle introduction to jQuery.</li>
+					<li>A brief look around other popular frameworks &amp; libraries.</li>
+					<li>Tool of the Week - Google Analytics</li>
+				</ul>
+
+			</section>
+
+			<section>
+				<section id="twitter">
+
+					<h2>Question?</h2>
+
 					<p>
-						<small><a href="http://cgddrd.me">Connor Goddard</a> / <a href="http://twitter.com/cgddrd">@cgddrd</a></small>
+						What is the difference between a framework and a library?
 					</p>
-					<p>
-						<small>Based on original material by <a href="mailto:hmd1@aber.ac.uk">Hannah Dee</a>.</small>
-					</p>
+
+
+					<a class="twitter-timeline" href="https://twitter.com/search?q=%23aber_ftw" data-widget-id="403491295307366402">Tweets about "#aber_ftw"</a>
+					<script>
+						! function(d, s, id) {
+							var js, fjs = d.getElementsByTagName(s)[0],
+								p = /^http:/.test(d.location) ? 'http' : 'https';
+							if (!d.getElementById(id)) {
+								js = d.createElement(s);
+								js.id = id;
+								js.src = p + "://platform.twitter.com/widgets.js";
+								fjs.parentNode.insertBefore(js, fjs);
+							}
+						}(document, "script", "twitter-wjs");
+					</script>
+
 				</section>
 
 				<section>
-					<h2>Welcome</h2>
+
+					<h2>Answer</h2>
+
 					<p>
-						For anyone who doesn't know me, I'm <a href="http://cgddrd.me">Connor</a>.
+						Typically, these terms are bounced around as meaning the same thing.
 					</p>
 
 					<p>
-						In this session, we'll aim to cover:
+						There is however, an important and defining difference: <span class="bold"><a href="">Inversion of Control</a></span>.
 					</p>
 
-					<ul>
-						<li>Javascript frameworks &amp; libraries - why do we need them?</li>
-						<li>A gentle introduction to jQuery.</li>
-						<li>A brief look around other popular frameworks &amp; libraries.</li>
-						<li>Tool of the Week - Google Analytics</li>
-					</ul>
+					<p>
+						<q cite="">&ldquo;Don't call us, we'll call you.&rdquo;</q>- The Hollywood Principle
+					</p>
+
+					<p>
+						<span class="bold">Further (Recommended) Reading:</span> Inversion of Control by Martin Fowler.
+					</p>
 
 				</section>
 
 				<section>
-					<section id="twitter">
 
-						<h2>Question?</h2>
+					<h2>Answer</h2>
 
-						<p>
-							What is the difference between a framework and a library?
-						</p>
+					<p>
+						With a <span class="bold">library</span>, your code remains in control.
+					</p>
 
-
-						<a class="twitter-timeline" href="https://twitter.com/search?q=%23aber_ftw" data-widget-id="403491295307366402">Tweets about "#aber_ftw"</a>
-						<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-
-					</section>
-
-					<section>
-
-						<h2>Answer</h2>
-
-						<p>
-							Typically, these terms are bounced around as meaning the same thing.
-						</p>
-
-						<p>
-							There is however, an important and defining difference: <span class="bold">Inversion of Control</span>.
-						</p>
-
-						<p>
-							<q cite="">&ldquo;Don't call us, we'll call you.&rdquo;</q>- The Hollywood Principle
-						</p>
-
-						<p>
-							<span class="bold">Further (Recommended) Reading:</span> Inversion of Control by Martin Fowler.
-						</p>
-
-					</section>
-
-					<section>
-
-						<h2>Answer</h2>
-
-						<p>
-							With a <span class="bold">library</span>, your code remains in control.
-						</p>
-
-						<pre>
+					<pre>
 
 var string1 = "Hello", string2 = "World";
 
@@ -128,11 +139,11 @@ var concatString = myLibrary.concat(string1, string2);
 
 </pre>
 
-						<p>
-							With a <span class="bold">framework</span>, the control is <em>inverted</em>, it calls your code (e.g. on receipt of an event).
-						</p>
+					<p>
+						With a <span class="bold">framework</span>, the control is <em>inverted</em>, it calls your code (e.g. on receipt of an event).
+					</p>
 
-						<pre>
+					<pre>
 
 var myFramework = new ExampleFramework();
 
@@ -146,360 +157,527 @@ function displayMessage() {
 
 </pre>
 
-					</section>
 				</section>
+			</section>
 
-				<!-- Example of nested vertical slides -->
+			<section>
 				<section>
-					<section>
-						<h2>Vertical Slides</h2>
-						<p>Slides can be nested inside of each other.</p>
-						<p>Use the <em>Space</em> key to navigate through all slides.</p>
-						<br>
-						<a href="#" class="navigate-down">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section>
-						<h2>Basement Level 1</h2>
-						<p>Nested slides are useful for adding additional detail underneath a high level horizontal slide.</p>
-					</section>
-					<section>
-						<h2>Basement Level 2</h2>
-						<p>That's it, time to go back up.</p>
-						<br>
-						<a href="#/2">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="transform: rotate(180deg); -webkit-transform: rotate(180deg);">
-						</a>
-					</section>
-				</section>
 
-				<section>
-					<h2>Slides</h2>
+					<h2>Javascript Libraries</h2>
+
 					<p>
-						Not a coder? Not a problem. There's a fully-featured visual editor for authoring these, try it out at <a href="http://slides.com" target="_blank">http://slides.com</a>.
+						Libraries are collections of functions for performing common manipulation tasks.
 					</p>
-				</section>
 
-				<section>
-					<h2>Point of View</h2>
 					<p>
-						Press <strong>ESC</strong> to enter the slide overview.
+						These can be <em>really useful</em>, particularly when it comes to cross-browser compatibility.
 					</p>
+
 					<p>
-						Hold down alt and click on any element to zoom in on it using <a href="http://lab.hakim.se/zoom-js">zoom.js</a>. Alt + click anywhere to zoom back out.
+						Typical features include:
 					</p>
-				</section>
 
-				<section>
-					<h2>Touch Optimized</h2>
-					<p>
-						Presentations look great on touch devices, like mobile phones and tablets. Simply swipe through your slides.
-					</p>
-				</section>
-
-				<section data-markdown>
-					<script type="text/template">
-						## Markdown support
-
-						Write content using inline or external Markdown.
-						Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
-
-						```
-						<section data-markdown>
-						  ## Markdown support
-
-						  Write content using inline or external Markdown.
-						  Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
-						</section>
-						```
-					</script>
-				</section>
-
-				<section>
-					<section id="fragments">
-						<h2>Fragments</h2>
-						<p>Hit the next arrow...</p>
-						<p class="fragment">... to step through ...</p>
-						<p><span class="fragment">... a</span> <span class="fragment">fragmented</span> <span class="fragment">slide.</span></p>
-
-						<aside class="notes">
-							This slide has fragments which are also stepped through in the notes window.
-						</aside>
-					</section>
-					<section>
-						<h2>Fragment Styles</h2>
-						<p>There's different types of fragments, like:</p>
-						<p class="fragment grow">grow</p>
-						<p class="fragment shrink">shrink</p>
-						<p class="fragment fade-out">fade-out</p>
-						<p class="fragment current-visible">current-visible</p>
-						<p class="fragment highlight-red">highlight-red</p>
-						<p class="fragment highlight-blue">highlight-blue</p>
-					</section>
-				</section>
-
-				<section id="transitions">
-					<h2>Transition Styles</h2>
-					<p>
-						You can select from different transitions, like: <br>
-						<a href="?transition=none#/transitions">None</a> -
-						<a href="?transition=fade#/transitions">Fade</a> -
-						<a href="?transition=slide#/transitions">Slide</a> -
-						<a href="?transition=convex#/transitions">Convex</a> -
-						<a href="?transition=concave#/transitions">Concave</a> -
-						<a href="?transition=zoom#/transitions">Zoom</a>
-					</p>
-				</section>
-
-				<section id="themes">
-					<h2>Themes</h2>
-					<p>
-						reveal.js comes with a few themes built in: <br>
-						<!-- Hacks to swap themes after the page has loaded. Not flexible and only intended for the reveal.js demo deck. -->
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/black.css'); return false;">Black (default)</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/white.css'); return false;">White</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/league.css'); return false;">League</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/sky.css'); return false;">Sky</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/beige.css'); return false;">Beige</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/simple.css'); return false;">Simple</a> <br>
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/serif.css'); return false;">Serif</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/blood.css'); return false;">Blood</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/night.css'); return false;">Night</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/moon.css'); return false;">Moon</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/solarized.css'); return false;">Solarized</a>
-					</p>
-				</section>
-
-				<section>
-					<section data-background="#dddddd">
-						<h2>Slide Backgrounds</h2>
-						<p>
-							Set <code>data-background="#dddddd"</code> on a slide to change the background color. All CSS color formats are supported.
-						</p>
-						<a href="#" class="navigate-down">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png">
-						<h2>Image Backgrounds</h2>
-						<pre><code class="hljs">&lt;section data-background="image.png"&gt;</code></pre>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png" data-background-repeat="repeat" data-background-size="100px">
-						<h2>Tiled Backgrounds</h2>
-						<pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background="image.png" data-background-repeat="repeat" data-background-size="100px"&gt;</code></pre>
-					</section>
-					<section data-background-video="https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.mp4,https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.webm" data-background-color="#000000">
-						<div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">
-							<h2>Video Backgrounds</h2>
-							<pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background-video="video.mp4,video.webm"&gt;</code></pre>
-						</div>
-					</section>
-					<section data-background="http://i.giphy.com/90F8aUepslB84.gif">
-						<h2>... and GIFs!</h2>
-					</section>
-				</section>
-
-				<section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
-					<h2>Background Transitions</h2>
-					<p>
-						Different background transitions are available via the backgroundTransition option. This one's called "zoom".
-					</p>
-					<pre><code class="hljs">Reveal.configure({ backgroundTransition: 'zoom' })</code></pre>
-				</section>
-
-				<section data-transition="slide" data-background="#b5533c" data-background-transition="zoom">
-					<h2>Background Transitions</h2>
-					<p>
-						You can override background transitions per-slide.
-					</p>
-					<pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background-transition="zoom"&gt;</code></pre>
-				</section>
-
-				<section>
-					<h2>Pretty Code</h2>
-					<pre><code class="hljs" data-trim contenteditable>
-function linkify( selector ) {
-  if( supports3DTransforms ) {
-
-    var nodes = document.querySelectorAll( selector );
-
-    for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
-      var node = nodes[i];
-
-      if( !node.className ) {
-        node.className += ' roll';
-      }
-    }
-  }
-}
-					</code></pre>
-					<p>Code syntax highlighting courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
-				</section>
-
-				<section>
-					<h2>Marvelous List</h2>
 					<ul>
-						<li>No order here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-						<li>Or here</li>
+						<li>Selectors (for creating handles to DOM elements)</li>
+						<li>Iterators (to act upon a group of selected elements)</li>
+						<li>AJAX support</li>
+						<li>Graphics and animation</li>
 					</ul>
+
 				</section>
 
 				<section>
-					<h2>Fantastic Ordered List</h2>
+
+					<h2>Javascript Libraries</h2>
+
+					<p>
+						What libraries do people know already?
+					</p>
+
+
+					<a class="twitter-timeline" href="https://twitter.com/search?q=%23aber_ftw" data-widget-id="403491295307366402">Tweets about "#aber_ftw"</a>
+					<script>
+						! function(d, s, id) {
+							var js, fjs = d.getElementsByTagName(s)[0],
+								p = /^http:/.test(d.location) ? 'http' : 'https';
+							if (!d.getElementById(id)) {
+								js = d.createElement(s);
+								js.id = id;
+								js.src = p + "://platform.twitter.com/widgets.js";
+								fjs.parentNode.insertBefore(js, fjs);
+							}
+						}(document, "script", "twitter-wjs");
+					</script>
+
+				</section>
+
+				<section>
+
+					<h2>Javascript Libraries</h2>
+
+					<p>
+						A small selection..
+					</p>
+
+					<img style="max-height: 500px; width: auto;" src="img/libraries.png" />
+
+				</section>
+
+				<section>
+
+					<h2>Javascript Libraries</h2>
+
+					<p>
+						Over recent years, the market for Javascript libraries (&amp; frameworks) has witnessed a steady rise.
+					</p>
+
+					<img style="max-height: 400px; width: auto;" src="img/market.png" />
+
+					<p>
+						Source: <a href="http://w3techs.com/technologies/overview/javascript_library/all">W3Techs</a>
+					</p>
+
+				</section>
+
+			</section>
+
+			<section>
+
+				<section>
+
+					<h2>An Intro to jQuery</h2>
+
+					<p>
+						jQuery has become one of the most popular libraries in use today.
+					</p>
+
+					<p>
+						Over years, the codebase has grown significantly, both internally and via <span class="bold">plugins</span>.
+					</p>
+
+					<p>
+						Many frameworks hold dependencies to jQuery, with some specifically built to work with the library (e.g. jQuery Mobile, jUnit)
+					</p>
+
+				</section>
+
+				<section>
+
+					<h2>An Intro to jQuery</h2>
+
+					<p>
+						Core features:
+					</p>
+
+					<ul>
+						<li>DOM manipulation</li>
+						<li>Cross-browser compatibility (polyfills)</li>
+						<li>Event-driven programming</li>
+						<li>Method chaining (not jQuery-specific)</li>
+					</ul>
+
+					<p>
+						<span class="bold">An example:</span>
+					</p>
+
+					<input type="button" onclick="turnYellow()" value="Turn Yellow">
+					<input type="button" class="next" onclick="turnNormal()" value="Turn Normal">
+
+					<pre>
+
+$("li").css("background-color","yellow").slideUp("slow");
+					</pre>
+
+				</section>
+
+				<section>
+
+					<h2>The <code class="inline">$()</code> function</h2>
+
+					<p>
+						The jQuery function (hosted within the core set of libraries) provides the main "gateway" for accessing the library and its functions.
+					</p>
+
+					<p>
+						The function is heavily overloaded, and can be used in one of four ways:
+					</p>
+
 					<ol>
-						<li>One is smaller than...</li>
-						<li>Two is smaller than...</li>
-						<li>Three!</li>
+						<li>CSS selectors <pre>$('p.text-label') // Returns jQuery object with all DOM elements that match.</pre></li>
+						<li>DOM element, document or window object <pre>$(window.document) // Returns jQuery object representing the document.</pre></li>
+						<li>HTML code <pre>$('&lt;p class="text-label"&gt;Hello World!&lt;/p&gt;') // Returns jQuery object.</pre></li>
+						<li>JS functions<pre>$(printGreeting) // Invokes function once DOM is ready.</pre></li>
 					</ol>
 				</section>
 
 				<section>
-					<h2>Tabular Tables</h2>
-					<table>
-						<thead>
-							<tr>
-								<th>Item</th>
-								<th>Value</th>
-								<th>Quantity</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>Apples</td>
-								<td>$1</td>
-								<td>7</td>
-							</tr>
-							<tr>
-								<td>Lemonade</td>
-								<td>$2</td>
-								<td>18</td>
-							</tr>
-							<tr>
-								<td>Bread</td>
-								<td>$3</td>
-								<td>2</td>
-							</tr>
-						</tbody>
-					</table>
-				</section>
 
-				<section>
-					<h2>Clever Quotes</h2>
+					<h2>jQuery Objects</h2>
+
 					<p>
-						These guys come in two forms, inline: <q cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;The nice thing about standards is that there are so many to choose from&rdquo;</q> and block:
+						When using jQuery, you will almost always be working with <strong>jQuery objects</strong>, rather than directly with DOM elements.
 					</p>
-					<blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;For years there has been a theory that millions of monkeys typing at random on millions of typewriters would
-						reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.&rdquo;
-					</blockquote>
-				</section>
 
-				<section>
-					<h2>Intergalactic Interconnections</h2>
 					<p>
-						You can link between slides internally,
-						<a href="#/2/3">like this</a>.
+						jQuery objects provide a number of additional functions that aim to make DOM elements less awkward.
 					</p>
-				</section>
 
-				<section>
-					<h2>Speaker View</h2>
-					<p>There's a <a href="https://github.com/hakimel/reveal.js#speaker-notes">speaker view</a>. It includes a timer, preview of the upcoming slide as well as your speaker notes.</p>
-					<p>Press the <em>S</em> key to try it out.</p>
-
-					<aside class="notes">
-						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
-					</aside>
-				</section>
-
-				<section>
-					<h2>Export to PDF</h2>
-					<p>Presentations can be <a href="https://github.com/hakimel/reveal.js#pdf-export">exported to PDF</a>, here's an example:</p>
-					<iframe src="https://www.slideshare.net/slideshow/embed_code/42840540" width="445" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:3px solid #666; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
-				</section>
-
-				<section>
-					<h2>Global State</h2>
 					<p>
-						Set <code>data-state="something"</code> on a slide and <code>"something"</code>
-						will be added as a class to the document element when the slide is open. This lets you
-						apply broader style changes, like switching the page background.
+						The jQuery object behaves very much like an array, where we can reference particular elements based upon their position within the document.
 					</p>
-				</section>
 
-				<section data-state="customevent">
-					<h2>State Events</h2>
-					<p>
-						Additionally custom events can be triggered on a per slide basis by binding to the <code>data-state</code> name.
-					</p>
-					<pre><code class="javascript" data-trim contenteditable style="font-size: 18px;">
-Reveal.addEventListener( 'customevent', function() {
-	console.log( '"customevent" has fired' );
-} );
-					</code></pre>
+					<pre>
+
+$("section").length; // Number of &lt;section&gt; elements within the body.
+
+$("section")[1]; // Access the second &lt;section&gt; element.
+
+$("section")[1].html("&lt;p&gt;Hello World!&lt;/p&gt;"); // Set the innerHTML for the second &lt;section&gt; element.
+					</pre>
+
 				</section>
 
 				<section>
-					<h2>Take a Moment</h2>
+
+					<h2>jQuery Objects</h2>
+
 					<p>
-						Press B or . on your keyboard to pause the presentation. This is helpful when you're on stage and want to take distracting slides off the screen.
+						jQuery objects also provide useful metadata about a given DOM element or function.
 					</p>
+
+					<pre>
+
+$("section").selector; // Returns "section"
+
+$("section").context; // Most likely returns "document"
+
+$("section").jquery; // Returns jQuery version number (e.g. "1.4.2")
+					</pre>
+
+					<p>
+						They can also allow your code to scale the DOM hierarchy.
+					</p>
+					<pre>
+
+$("section").parent(); // Returns jQuery object for &lt;body&gt; or perhaps &lt;div&gt;.
+
+$("li.selected").css("background-color", "red").siblings().css("background-color", "white");
+
+$("ul").children().first(); // Returns first &lt;li&gt; element.
+
+// Could also do: $("li").first();
+					</pre>
+
 				</section>
 
 				<section>
-					<h2>Much more</h2>
+
+					<h2>Some Examples</h2>
+
+					<p>
+						1) Get/Set CSS attributes
+						<input type="button" class="next" onclick="revealCSSProperty()" value="Get CSS Property">
+					</p>
+
+					<pre>
+
+// Get the associated CSS property.
+$("h2").css("color") // Returns "rgb(45, 62, 79)".
+
+// Change the background-color CSS property for all &lt;H2&gt; elements.
+$("h2").css("background-color", "#47D591");
+					</pre>
+
+					<p>
+						How could we restrict this to only the <code>&lt;H2&gt;</code> element above?
+						<input type="button" class="next" onclick="revealAnswer()" value="Reveal">
+					</p>
+
+					<input id="changeHeadingColourButton" type="button" onclick="changeHeadingColour()" value="Set Background Colour">
+
+					<pre id="answerCode">
+
+$("#changeHeadingColourButton").siblings("h2").css("background-color", "#47D591")
+					</pre>
+
+				</section>
+
+				<section>
+
+					<h2>Some Examples</h2>
+
+					<p>
+						2) Get/Set HTML attributes &amp; content
+					</p>
+
+					<pre>
+
+// Change the "href" attribute of an &lt;A&gt; element.
+$("a").attr("href","http://www.qinusty.co.uk/dapstep.mp3");
+
+// Update the content for the &lt;A&gt; element with the content of the &lt;H2&gt; element.
+$("a").text($("a").siblings("h2").text());
+
+// Update the innerHTML for the &lt;A&gt; element with the content of the &lt;H2&gt; element.
+$("a").html("&lt;i&gt;" + $("a").siblings("h2").text() + "&lt;/i&gt;");
+
+					</pre>
+
+					<input type="button" onclick="changeLinkURL()" value="Change Link URL">
+
+					<p><a id="exampleLink" target="_blank" href="http://aber.ac.uk/cs/">Aber Comp Sci Homepage</a></p>
+
+				</section>
+
+				<section>
+
+					<h2>Some Examples</h2>
+
+					<p>
+						3) Method Chaining &amp; Iteration
+					</p>
+
+					<p>
+						In the case where a collection of jQuery objects are returned, jQuery will iterate through these implicitly.
+					</p>
+					<pre>
+
+// Iterate through all available &lt;LI&gt; elements and change their background colour.
+$("li").css("background-color", "red");
+					</pre>
+
+					<p>
+						For more complex behaviour, we have the option of using <code>each()</code>.
+					</p>
+					<pre>
+
+$("p").each(function(i) {
+		$(this).css("background-color", "red");
+		$(this).append(" (that was li number <b>" + i + "</b>)");
+})
+					</pre>
+
+					<input id="iterationButton" type="button" onclick="changePColours()" value="Run Example">
+
+				</section>
+
+				<section>
+
+					<h2>jQuery Events</h2>
+
+					<p>
+						jQuery also comes equipped with a wide variety of event handlers.
+					</p>
+
+					<p>
+						Many of these are designed to handle cross-compatibility issues (lookin' at you IE...)
+					</p>
+
+					<p>
+						jQuery events can be applied to nearly any element (represented as a jQuery Object)
+					</p>
+
+					<pre>
+
+// Add 'click' event handler on &lt;LI&gt; elements.
+$("li").on("click",function() {
+    $(this).css("background-color","blue");
+});
+
+// Provide custom logic on &lt;FORM&gt; submit.
+$("form").on( "submit", function( event ) {
+	// Perform custom action with form data.
+});
+
+// 'Special' event triggered when DOM is ready.
+$(document).ready(function() {
+  // Initalise component or display content.
+});
+					</pre>
+
+				</section>
+
+				<section>
+
+					<h2>Obtaining jQuery</h2>
+
+					<p>
+						You can grab jQuery from the official <a href="http://jquery.com">project website</a>.
+					</p>
+
+					<p>
+						When including in your own projects, you have two choices:
+					</p>
+
+					<ol>
+						<li>Download JS code and reference locally.
+
+						</li>
+
+						<pre>
+
+&lt;script src="lib/js/jquery-1.12.3.min.js"&gt;&lt;/script&gt;
+						</pre>
+
+						<li>Access via a <strong>Content Delivery Network</strong></li>
+
+						<pre>
+
+&lt;script src="https://code.jquery.com/jquery-1.12.0.min.js"&gt;&lt;/script&gt;
+							</pre> This reduces server load, and can provide optimised delivery of files.
+
+					</ol>
+
+					<p>
+						In either case, make sure to refer to the <strong>minified</strong> version in production use.
+					</p>
+
+				</section>
+
+				<section>
+
+					<h2>Exercise 1: jQuery</h2>
+
+					<p>
+						Save <a href="http://www.aber.ac.uk/~dcswww/Dept/Teaching/CourseNotes/current/CS25210/slides/jquery_playground.html">this file</a> to your IWP scrapbook, and try using some of the methods covered so far to alter the appearance.
+					</p>
+
+					<p>
+						Do whatever you want, use your imagination. Also feel free to fire up the <a href="https://api.jquery.com/">jQuery docs</a> and try some other features.
+					</p>
+
+					<p>
+						For those lacking imagination, some ideas:
+					</p>
+
 					<ul>
-						<li>Right-to-left support</li>
-						<li><a href="https://github.com/hakimel/reveal.js#api">Extensive JavaScript API</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#auto-sliding">Auto-progression</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#parallax-background">Parallax backgrounds</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#keyboard-bindings">Custom keyboard bindings</a></li>
+						<li>Change the <code>&lt;H1&gt;</code> text content to a new value.</li>
+						<li>Change the <code>&lt;H1&gt;</code> background colour.</li>
+						<li>Edit the <code>&lt;H1&gt;</code> elements so that it calls a JavaScript function <code>onLoad()</code>.</li>
+						<li>Use this new function to style margins, fonts, etc.</li>
+						<li>Edit the function <code>buttonpressed()</code> so that it modifies the background colour of the page.</li>
 					</ul>
-				</section>
 
-				<section style="text-align: left;">
-					<h1>THE END</h1>
 					<p>
-						- <a href="http://slides.com">Try the online editor</a> <br>
-						- <a href="https://github.com/hakimel/reveal.js">Source code &amp; documentation</a>
+						Any problems, flag myself, Edel or other demonstrators over.
 					</p>
+
 				</section>
 
-			</div>
+				<section>
+
+					<h2>A Word of Caution</h2>
+
+					<p>There is no doubt that jQuery can make the life of a web developer much less painful.</p>
+
+					<p><strong>However</strong>, as good software developers, you have to know what constitues the <strong>right time and place to use it.</strong></p>
+
+					<p>jQuery has a <strong>BIG</strong> codebase, that is inevitably going to add some additional bloat to your website or application.</p>
+
+					<p>jQuery should not be used as a <a href="https://sourcemaking.com/antipatterns/golden-hammer">Golden Hammer</a>.</p>
+
+					<p>Make sensible choices to the <strong>benefit vs. cost</strong> balance with using jQuery over vanilla JS.</p>
+
+				</section>
+
+				<section>
+
+					<h2>A Word of Caution</h2>
+
+					<p>Please, don't be this person.</p>
+
+					<img style="max-height: 480px; width: auto;" src="img/jquery-noob.png" />
+
+				</section>
+
+			</section>
+
+			<section>
+				<section>
+
+					<h2>Frameworks</h2>
+
+					<p>As we've already learned: frameworks tend to enforce some kind of structure or convention on our code.</p>
+
+					<p>This has a few advantages:</p>
+
+					<ul>
+						<li>Promotes good development practice.</li>
+						<li>Enforces a set standard of code layout and behaviour (useful when asking for help from StackOverflow).</li>
+						<li>Typically makes future maintenance more manageable (understandable functions, well-documentated behaviour).</li>
+						<li>Takes advantage of latest technologies, with cross-compatability taken care of for us.</li>
+					</ul>
+
+					<p>It would be uncommon for a complex web-application to not adopt at least some form of framework.</p>
+
+				</section>
+
+				<section>
+
+					<h2>Frameworks</h2>
+
+					<p>Nowadays, there a frameworks available for almost any kind of task:</p>
+
+					<ul>
+						<li><strong>MVC:</strong> <a href="https://angularjs.org">AngularJS</a>, <a href="http://backbonejs.org/">BackboneJS</a>, <a href="http://emberjs.com/">EmberJS</a></li>
+						<li><strong>Hybrid-Desktop Applications:</strong> <a href="https://angularjs.org">AngularJS</a>, <a href="http://backbonejs.org/">BackboneJS</a>, <a href="http://emberjs.com/">EmberJS</a></li>
+					</ul>
+
+				</section>
+			</section>
 
 		</div>
 
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
+	</div>
 
-		<script>
+	<script src="lib/js/jquery-1.12.3.min.js"></script>
+	<script src="lib/js/head.min.js"></script>
+	<script src="js/reveal.js"></script>
+	<script src="js/cg-slides.js"></script>
 
-			// Full list of configuration options available at:
-			// https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
-				controls: true,
-				progress: true,
-				history: true,
-				center: true,
+	<script>
+		// Full list of configuration options available at:
+		// https://github.com/hakimel/reveal.js#configuration
+		Reveal.initialize({
+			controls: true,
+			progress: true,
+			history: true,
+			center: true,
 
-				transition: 'slide', // none/fade/slide/convex/concave/zoom
+			transition: 'slide', // none/fade/slide/convex/concave/zoom
 
-				// Optional reveal.js plugins
-				dependencies: [
-					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: 'plugin/zoom-js/zoom.js', async: true },
-					{ src: 'plugin/notes/notes.js', async: true }
-				]
-			});
+			// Optional reveal.js plugins
+			dependencies: [{
+				src: 'lib/js/classList.js',
+				condition: function() {
+					return !document.body.classList;
+				}
+			}, {
+				src: 'plugin/markdown/marked.js',
+				condition: function() {
+					return !!document.querySelector('[data-markdown]');
+				}
+			}, {
+				src: 'plugin/markdown/markdown.js',
+				condition: function() {
+					return !!document.querySelector('[data-markdown]');
+				}
+			}, {
+				src: 'plugin/highlight/highlight.js',
+				async: true,
+				callback: function() {
+					hljs.initHighlightingOnLoad();
+				}
+			}, {
+				src: 'plugin/zoom-js/zoom.js',
+				async: true
+			}, {
+				src: 'plugin/notes/notes.js',
+				async: true
+			}]
+		});
+	</script>
 
-		</script>
+</body>
 
-	</body>
 </html>

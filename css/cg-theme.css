@@ -4,7 +4,7 @@ html, body {
   font-size: 26pt;
 }
 
-h1, h2, h3, h4, h5, h6, p, ul, ol, li {
+h1, h2, h3, h4, h5, h6, p, ul, ol, li, input {
   text-align: left;
   font-family: 'Fira Sans', sans-serif !important;
   color: #2D3E4F !important;
@@ -13,17 +13,30 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, li {
 h1, h2, h3, h4, h5, h6 {
 
   font-weight: 400 !important;
+  padding: 0.5rem 0 !important;
 
 }
 
-p, ul, ol, li, span {
+h1, h2 {
 
-  font-weight: 300 !important;
+  border-bottom: solid 5px #47D591 !important;
+
+}
+
+h2 {
+
+  margin-bottom: 40px !important;
+
+}
+
+p, ul, ol, li, span, input {
+
+  font-weight: 200 !important;
 
 }
 
 p, ul, ol, li {
-  font-size: 0.8rem !important;
+  font-size: 0.7rem !important;
 }
 
 ul, ol {
@@ -35,7 +48,7 @@ ul, ol {
 
 li, p {
 
-  line-height: 1.8em !important;
+  line-height: 1.5em !important;
 
 }
 
@@ -55,14 +68,17 @@ pre {
   padding-left: 20px !important;
   font-size: 0.5rem !important;
 
+  white-space: pre-wrap;       /* css-3 */
+  white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+  white-space: -pre-wrap;      /* Opera 4-6 */
+  white-space: -o-pre-wrap;    /* Opera 7 */
+  word-wrap: break-word;  /* IE */
+
 }
 
-
-
-
-
 .reveal {
-    background-color: #fbfbfb !important;
+    /*background-color: #fbfbfb !important;*/
+    background-color: #ffffff !important;
 }
 
 
@@ -90,6 +106,52 @@ pre {
   border-left-color: #47D591 !important;
 }
 
+section {
+
+  text-align: left !important;
+  background-color: #fff !important;
+
+}
+
+input[type="button"] {
+
+  padding: 10px;
+  margin-left: 40px;
+
+  background-color: #fafafa;
+  border: none;
+
+  border-radius: 5px;
+
+  font-weight: 200;
+
+  cursor: pointer;
+
+  font-size: 0.6rem;
+
+}
+
+input[type="button"].next {
+
+  margin-left: 20px !important;
+
+}
+
+input[type="button"]:hover {
+
+  background-color: #47D591;
+
+}
+
+img {
+
+  border: none !important;
+  box-shadow: none !important;
+  margin: 0 !important;
+  background: none !important;
+
+}
+
 #twitter {
 
   /*height: 600px !important;*/
@@ -100,5 +162,13 @@ pre {
 .twitter-timeline {
 
   max-height: 500px !important;
+
+}
+
+code.inline {
+
+  display: inline-block !important;
+  margin-top: -3px !important;
+  vertical-align: top !important;
 
 }
