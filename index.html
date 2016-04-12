@@ -47,7 +47,7 @@
 				<h2>Javascript Frameworks &amp; Libraries</h2>
 				<h4>CS25210 - Client Side Graphics Programming For the Web</h4>
 				<p>
-					<small><a href="http://cgddrd.me">Connor Goddard</a> / <a href="http://twitter.com/cgddrd">@cgddrd</a></small>
+					<a href="http://cgddrd.me">Connor Goddard</a> / <a href="http://twitter.com/cgddrd">@cgddrd</a>
 				</p>
 				<p>
 					<small>Based on original material by <a href="mailto:hmd1@aber.ac.uk">Hannah Dee</a>.</small>
@@ -510,9 +510,7 @@ $(document).ready(function() {
 					</p>
 
 					<ol>
-						<li>Download JS code and reference locally.
-
-						</li>
+						<li>Download JS code and reference locally.</li>
 
 						<pre>
 
@@ -620,10 +618,331 @@ $(document).ready(function() {
 
 					<ul>
 						<li><strong>MVC:</strong> <a href="https://angularjs.org">AngularJS</a>, <a href="http://backbonejs.org/">BackboneJS</a>, <a href="http://emberjs.com/">EmberJS</a></li>
-						<li><strong>Hybrid-Desktop Applications:</strong> <a href="https://angularjs.org">AngularJS</a>, <a href="http://backbonejs.org/">BackboneJS</a>, <a href="http://emberjs.com/">EmberJS</a></li>
+						<li><strong>Testing:</strong> <a href="http://qunitjs.com/">qUnit</a>, <a href="http://jasmine.github.io/">Jasmine</a>, <a href="http://www.protractortest.org/">Protractor</a></li>
+						<li><strong>Hybrid-Desktop Applications:</strong> <a href="http://facebook.github.io/react-native/">React-Native</a>, <a href="http://electron.atom.io/">Electron</a>, <a href="https://cordova.apache.org/">Apache Cordova</a></li>
+						<li><strong>Node.JS CMS:</strong> <a href="https://ghost.org/">Ghost</a>, <a href="https://wejs.org/">We.JS</a>, <a href="http://keystonejs.com/">KeystoneJS</a></li>
+						<li><strong>Templating Engines:</strong> <a href="http://mustache.github.io/">MustacheJS</a>, <a href="http://handlebarsjs.com/">Handlebars.JS</a>, <a href="http://jade-lang.com/">Jade</a></li>
 					</ul>
 
+					<p>
+						These don't even scratch the surface. There are thousands and thousands of frameworks, with more coming every week!
+					</p>
+
 				</section>
+
+				<section>
+
+					<h2>A Brief Look at AngularJS</h2>
+
+					<p>Web application framework, originally developed by Google, who still maintain it alongside many other open-source contributors.</p>
+
+					<p>Designed to help address many of the challenges associated with developing single-page applications: UI data-binding, application state, resource management, server vs. client code partitioning, etc.</p>
+
+					<p>Represents the front-end of the MEAN stack (Collection of open-source Javascript frameworks for developing dynamic web applications).</p>
+
+					<p>Supports a <strong>MVW</strong> architecture (incorporating <i>MVC</i>, <i>MVP</i> &amp; <i>MVVM</i>).</p>
+
+					<p>See here for a comparison of <a href="http://www.rrpowered.com/2014/04/angularjs-vs-jquery/">AngularJS vs. jQuery</a>.</p>
+
+				</section>
+
+				<section>
+
+					<h2>A Brief Look at AngularJS</h2>
+
+					<p>At its core, AngularJS works by extending standard HTML vocabulary with <strong>directives</strong>.</p>
+
+					<p>Directives are additional HTML attributes that AngularJS can read and understand. All directives start with the <code>ng-</code> prefix.</p>
+
+					<p>Directives are used in combination with <strong>Expressions</strong> <code>{{ ... }}</code> to allow dynamic data to be rendered within HTML pages.
+
+					<pre>
+
+&lt;!-- ng-app is used to "bootstrap" AngularJS, by designating the root element of the application --&gt;
+
+&lt;body ng-app=""&gt;
+  &lt;div&gt;
+    &lt;p&gt;The sum of 5 + 5 is: {{ 5 + 5 }}&lt;/p&gt; &lt;!-- "The sum of 5 + 5 is: 10" --&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+<a class="credit" href="http://www.w3schools.com/angular/angular_intro.asp">Credit</a>
+					</pre>
+				</section>
+
+				<section>
+
+					<h2>A Brief Look at AngularJS</h2>
+
+					<p>Using AngularJS, we can bind data from our model the the view.</p>
+
+					<p>To propagate these changes, the framework performs asynchronous <a href="https://docs.angularjs.org/guide/scope">dirty checking</a>.</p>
+
+					<pre>
+
+&lt;div ng-app=""&gt;
+
+  &lt;!-- ng-model binds the content of the input box to the property "name". --&gt;
+
+  &lt;p&gt;Name: &lt;input type="text" ng-model="name"&gt;&lt;/p&gt;
+  &lt;p&gt;My name is: {{name}}&gt;&lt;/p&gt;
+
+&lt;/div&gt;
+<a class="credit" href="http://www.w3schools.com/angular/angular_intro.asp">Credit</a>
+					</pre>
+				</section>
+
+				<section>
+
+					<h2>A Brief Look at AngularJS</h2>
+
+					<p>For more complex cases, we can introduce <strong>modules</strong> and <strong>controllers</strong>.</p>
+
+					<pre>
+
+&lt;div ng-app="" ng-controller="myController"&gt;
+
+  &lt;p&gt;First Name: &lt;input type="text" ng-model="firstName"&gt;&lt;/p&gt;
+  &lt;p&gt;Surname: &lt;input type="text" ng-model="surname"&gt;&lt;/p&gt;
+  &lt;p&gt;My full name is: {{firstName + " " + surname}}&gt;&lt;/p&gt;
+
+&lt;/div&gt;
+
+&lt;script&gt;
+
+var myApp = angular.module('myApp', []);
+
+// Define our new AngularJS controller.
+myApp.controller('myController', function($scope) {
+
+  // $scope provides access to our model.
+  $scope.firstName= "John";
+  $scope.surname= "Doe";
+});
+
+&lt;/script&gt;
+<a class="credit" href="http://www.w3schools.com/angular/angular_intro.asp">Credit</a>
+					</pre>
+				</section>
+
+				<section>
+
+					<h2>Exercise 2: AngularJS</h2>
+
+					<p>
+						Spend 5 or 10 minutes to become better acquainted with AngularJS, and what it can do.
+					</p>
+
+					<div class="img-cont float">
+						<p>
+							As we all know, the web is can be your best friend when learning a new technology. <br /><br />
+							Take a look at some online resources: <a href="https://angularjs.org/">AngularJS (v1.0)</a>, <a href="https://angular.io/">AngularJS (v2.0)</a>, <a href="http://www.w3schools.com/angular/angular_intro.asp">W3Schools</a> and have a play.
+						</p>
+
+						<img style="max-height: 480px; width: auto;" src="img/stackoverflow.png">
+						<a class="credit" href="https://twitter.com/wesnetmo/status/467200892941635584">Credit</a></img>
+					</div>
+
+					<p>
+						Or, take a look at another framework of your choice.
+					</p>
+
+					<p>
+						Any problems let us know.
+					</p>
+
+				</section>
+
+			</section>
+
+			<section>
+
+				<section>
+
+					<h2>Tool of the Week: Google Analytics</h2>
+
+					<p>
+						After spending signficant time (and probably money) developing a website or web application, its important to monitor its performance.
+					</p>
+
+					<p>
+						Web analytics can provide a wealth of metrics important to both <strong>business professionals</strong> and <strong>developers</strong>:
+					</p>
+
+					<ul>
+						<li>User demographics</li>
+						<li>Browser usage</li>
+						<li>Platform &amp; screen-size usage</li>
+						<li>Feature/page popularity</li>
+						<li>Plus much more.</li>
+					</ul>
+
+					<p>
+						As professional web developers, you should care about how your websites and applications are being used.
+					</p>
+
+				</section>
+
+				<section>
+
+					<h2>Exercise 3: Google Analytics</h2>
+
+					<p><a href="https://www.google.co.uk/analytics/">Google Analytics</a> is a "freemium" service that provides a highly comprehensive analytics tracking and insight platform.</p>
+
+					<p>
+						Anyone can add analytics to their websites, web applications and even mobile applications.
+					</p>
+
+					<p>
+						To use Google Analytics, you will need <i>register</i> using a Google Account (but this doesn't have to be a personal account).
+					</p>
+
+					<p>
+						Have a go now at adding the service to your IWP scrapbooks (or your entire Aber webspace). You will need to add some <i>tracking code</i> (provided by Google) to every page that you want to track.
+					</p>
+
+					<p>
+						As always, any problems, flag us over.
+					</p>
+
+				</section>
+
+			</section>
+
+			<section>
+				<section>
+
+					<h2>A Minor Digression: Hybrid Apps</h2>
+
+					<p>In traditional application development, a developer has two main choices regarding the type of platform they wish to develop for: <i>native</i> or <i>web</i>.
+
+					<p>Both have their relative merits and pitfalls, and the suitability of either platform will depend greatly on the objectives of a specific application.</p>
+
+					<p>Over recent years, popularity has been growing for an alternative type of application: <strong>hybrid</strong>.</p>
+
+					<p>Hybrid applications attempt to combine the best of both native and web platforms, by wrapping applications built using core web technologies (HTML, CSS &amp; JS) within a native "shell".</p>
+
+				</section>
+
+				<section>
+
+					<h2>Native vs. Web vs. Hybrid</h2>
+
+					<div class="img-cont">
+						<img style="max-height: 600px; width: auto;" src="img/native_html5_hybrid.jpg">
+						<a class="credit" href="https://developer.salesforce.com/page/Native,_HTML5,_or_Hybrid:_Understanding_Your_Mobile_Application_Development_Options">Credit</a></img>
+					</div>
+
+				</section>
+
+				<section>
+
+					<h2>Hybrid Apps</h2>
+
+					<div class="img-cont float">
+
+						<div class="text-cont">
+							<p>A major draw for companies, is the potential for multiple device platforms to be targeted using a <strong>single shared codebase</strong>.
+								<br/> <br />
+								To develop a hybrid application, you would want to use a framework such as <a href="https://cordova.apache.org/">Apache Cordova</a>.
+							</p>
+						</div>
+
+						<div class="img">
+							<img style="max-height: 480px; width: auto;" src="img/html-baby-opt.jpg">
+							<a class="credit" href="https://www.smashingmagazine.com/2014/10/providing-a-native-experience-with-web-technologies/">Credit</a></img>
+						</div>
+
+					</div>
+
+					<p>Services like that of <a href="https://build.phonegap.com/">Adobe&reg; Phonegap&trade;</a> even allow you to build hybrid applications <strong>in the cloud</strong>.</p>
+
+				</section>
+
+				<section>
+
+					<h2>Hybrid Apps</h2>
+
+					<p>Of course, hybrid applications present their own pitfalls (<i>performance</i>, <i>usability</i>, <i>feature set</i>, etc.).</p>
+
+					<p>Sensible decisions have to be taken with a view toward the <strong>long term</strong> plans for an application wishing to utilise hybrid technologies.</p>
+
+					<p>A few examples of "real-life" applications developed using hybrid technologies: <a href="https://play.google.com/store/apps/details?id=com.renishaw.idt.goprobe&hl=en_GB">Renishaw GoProbe</a> (shameless plug), <a href="http://electron.atom.io/">Github Atom</a>, <a href="https://code.visualstudio.com/">Visual Studio Code</a> &amp; Facebook (once upon a time).</p>
+
+				</section>
+
+				<section data-state="stats">
+
+					<h2>Exercise 4: Speed Research</h2>
+
+					<div class="img-cont float">
+
+						<div class="text-cont">
+
+							<p>You have <span id="time2"><strong>2 mins and 32 secs</strong></span> to find out answers to the following questions:</p>
+
+							<ul>
+								<li>What does the term <i>JSON</i> stand for?</li>
+								<li>What is the purpose of JSON?</li>
+							</ul>
+
+							<p class="fragment">I'm then going to pick on someone.</p>
+
+						</div>
+
+						<div class="img fragment">
+							<img style="max-height: 480px; width: auto;" src="img/soz-meme.jpg">
+							<a class="credit" href="https://memegenerator.net/instance2/5219698">Credit</a></img>
+						</div>
+
+					</div>
+
+				</section>
+
+			</section>
+
+			<section>
+
+				<section>
+
+					<h2>Conclusions</h2>
+
+					<p>Today we have taken only a whistlestop tour around some of most popular JS libraries and frameworks.</p>
+
+					<p>There are ones to cover practically every purpose, including <a href="http://zurb.com/playground/jquery-raptorize">this</a>.</p>
+
+					<p>Both jQuery and AngularJS aim to make the life of the developer easier, by addressing many of the "boilerplate"/admin tasks that developing for the web entails:
+
+						<ul>
+							<li>Cross-compatibility</li>
+							<li>DOM access &amp; manipulation</li>
+							<li>AJAX</li>
+							<li>Animations</li>
+						</ul>
+
+				</section>
+
+				<section>
+
+					<h2>Conclusions</h2>
+
+					<p>Hopefully, you will now have a greater appreciation for how <i>mutable</i> a web page can be with the right set of client-side tools.</p>
+
+					<p>For further information, I would <strong>strongly</strong> recommend that you take a look at <a href="https://www.aber.ac.uk/~dcswww/Dept/Teaching/CourseNotes/2014-2015/CS25210/slides/lecture8.html#1">Hannah Dee's slides</a> from last year. These provide further information on other aspects we haven't covered.</p>
+
+				</section>
+
+				<section>
+
+					<h2>Thanks</h2>
+
+					<p><strong>Web:</strong> <a href="http://connorlukegoddard.com">http://connorlukegoddard.com</a></p>
+					<p><strong>Email:</strong> <a href="mailto:clg11@aber.ac.uk">clg11@aber.ac.uk</a></p>
+
+					<br />
+					<p><small>These slides were built using the <a href="http://lab.hakim.se/reveal-js/#/">Reveal.JS</a> framework.</small></p>
+
+				</section>
+
 			</section>
 
 		</div>

@@ -45,7 +45,40 @@ function changePColours() {
 
 }
 
+function startTimer(duration, display) {
+
+    var timer = duration, minutes, seconds;
+
+    var intervalId = setInterval(function () {
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
+
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        display.innerHTML = "<strong>" + minutes + " mins and " + seconds + " secs</strong>";
+
+        if (--timer < 0) {
+            display.innerHTML = "<strong>no time left</strong>";
+            clearInterval(intervalId);
+        }
+    }, 1000);
+}
+
+function triggerExerciseTimer() {
+
+  var twoMinsThirtyTwoSecs = 152,
+      display = document.querySelector('#time2');
+
+      startTimer(twoMinsThirtyTwoSecs, display);
+}
+
+Reveal.addEventListener( 'stats', function() {
+    triggerExerciseTimer();
+} );
+
+
 $(document).ready(function() {
   $("#changeHeadingColourButton").slideUp()
   $("#answerCode").slideUp()
+
 });
