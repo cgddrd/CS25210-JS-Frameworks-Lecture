@@ -74,28 +74,13 @@
 			</section>
 
 			<section>
-				<section id="twitter">
+				<section>
 
 					<h2>Question?</h2>
 
 					<p>
 						What is the difference between a framework and a library?
 					</p>
-
-
-					<a class="twitter-timeline" href="https://twitter.com/search?q=%23aber_ftw" data-widget-id="403491295307366402">Tweets about "#aber_ftw"</a>
-					<script>
-						! function(d, s, id) {
-							var js, fjs = d.getElementsByTagName(s)[0],
-								p = /^http:/.test(d.location) ? 'http' : 'https';
-							if (!d.getElementById(id)) {
-								js = d.createElement(s);
-								js.id = id;
-								js.src = p + "://platform.twitter.com/widgets.js";
-								fjs.parentNode.insertBefore(js, fjs);
-							}
-						}(document, "script", "twitter-wjs");
-					</script>
 
 				</section>
 
@@ -115,15 +100,11 @@
 						<q cite="">&ldquo;Don't call us, we'll call you.&rdquo;</q>- The Hollywood Principle
 					</p>
 
-					<p>
-						<span class="bold">Further (Recommended) Reading:</span> Inversion of Control by Martin Fowler.
-					</p>
-
 				</section>
 
 				<section>
 
-					<h2>Answer</h2>
+					<h2>Inversion of Control</h2>
 
 					<p>
 						With a <span class="bold">library</span>, your code remains in control.
@@ -216,10 +197,12 @@ function displayMessage() {
 					<h2>Javascript Libraries</h2>
 
 					<p>
-						A small selection..
+						A small selection:
 					</p>
 
-					<img style="max-height: 500px; width: auto;" src="img/libraries.png" />
+					<div class="img-cont">
+						<img style="max-height: 500px; width: auto;" src="img/libraries.png" />
+					</div>
 
 				</section>
 
@@ -231,11 +214,10 @@ function displayMessage() {
 						Over recent years, the market for Javascript libraries (&amp; frameworks) has witnessed a steady rise.
 					</p>
 
-					<img style="max-height: 400px; width: auto;" src="img/market.png" />
-
-					<p>
-						Source: <a href="http://w3techs.com/technologies/overview/javascript_library/all">W3Techs</a>
-					</p>
+					<div class="img-cont">
+						<img style="max-height: 400px; width: auto;" src="img/market.png" />
+						<a class="credit" href="http://w3techs.com/technologies/overview/javascript_library/all">Credit</a></img>
+					</div>
 
 				</section>
 
@@ -425,7 +407,7 @@ $("a").html("&lt;i&gt;" + $("a").siblings("h2").text() + "&lt;/i&gt;");
 
 					<input type="button" onclick="changeLinkURL()" value="Change Link URL">
 
-					<p><a id="exampleLink" target="_blank" href="http://aber.ac.uk/cs/">Aber Comp Sci Homepage</a></p>
+					<a id="exampleLink" target="_blank" href="http://aber.ac.uk/cs/">Aber Comp Sci Homepage</a>
 
 				</section>
 
@@ -452,8 +434,8 @@ $("li").css("background-color", "red");
 					<pre>
 
 $("p").each(function(i) {
-		$(this).css("background-color", "red");
-		$(this).append(" (that was li number <b>" + i + "</b>)");
+  $(this).css("background-color", "red");
+  $(this).append(" (that was li number <b>" + i + "</b>)");
 })
 					</pre>
 
@@ -481,12 +463,12 @@ $("p").each(function(i) {
 
 // Add 'click' event handler on &lt;LI&gt; elements.
 $("li").on("click",function() {
-    $(this).css("background-color","blue");
+  $(this).css("background-color","blue");
 });
 
 // Provide custom logic on &lt;FORM&gt; submit.
 $("form").on( "submit", function( event ) {
-	// Perform custom action with form data.
+  // Perform custom action with form data.
 });
 
 // 'Special' event triggered when DOM is ready.
@@ -584,7 +566,10 @@ $(document).ready(function() {
 
 					<p>Please, don't be this person.</p>
 
-					<img style="max-height: 480px; width: auto;" src="img/jquery-noob.png" />
+					<div class="img-cont">
+						<img style="max-height: 450px; width: auto;" src="img/jquery-noob.png" />
+						<a class="credit" href="http://www.doxdesk.com/updates/2009.html#u20091116-zalgo">Credit</a></img>
+					</div>
 
 				</section>
 
@@ -601,7 +586,7 @@ $(document).ready(function() {
 
 					<ul>
 						<li>Promotes good development practice.</li>
-						<li>Enforces a set standard of code layout and behaviour (useful when asking for help from StackOverflow).</li>
+						<li>Enforces a set standard of code layout and behaviour (useful when asking for help from others).</li>
 						<li>Typically makes future maintenance more manageable (understandable functions, well-documentated behaviour).</li>
 						<li>Takes advantage of latest technologies, with cross-compatability taken care of for us.</li>
 					</ul>
@@ -634,13 +619,13 @@ $(document).ready(function() {
 
 					<h2>A Brief Look at AngularJS</h2>
 
-					<p>Web application framework, originally developed by Google, who still maintain it alongside many other open-source contributors.</p>
+					<p>Web application framework, originally developed by Google, who still maintains it alongside many other open-source contributors.</p>
 
 					<p>Designed to help address many of the challenges associated with developing single-page applications: UI data-binding, application state, resource management, server vs. client code partitioning, etc.</p>
 
 					<p>Represents the front-end of the MEAN stack (Collection of open-source Javascript frameworks for developing dynamic web applications).</p>
 
-					<p>Supports a <strong>MVW</strong> architecture (incorporating <i>MVC</i>, <i>MVP</i> &amp; <i>MVVM</i>).</p>
+					<p>Supports a <strong>Model-View-Whatever</strong> architecture (incorporating <i>MVC</i>, <i>MVP</i> &amp; <i>MVVM</i>).</p>
 
 					<p>See here for a comparison of <a href="http://www.rrpowered.com/2014/04/angularjs-vs-jquery/">AngularJS vs. jQuery</a>.</p>
 
@@ -733,13 +718,19 @@ myApp.controller('myController', function($scope) {
 					</p>
 
 					<div class="img-cont float">
-						<p>
-							As we all know, the web is can be your best friend when learning a new technology. <br /><br />
-							Take a look at some online resources: <a href="https://angularjs.org/">AngularJS (v1.0)</a>, <a href="https://angular.io/">AngularJS (v2.0)</a>, <a href="http://www.w3schools.com/angular/angular_intro.asp">W3Schools</a> and have a play.
-						</p>
 
-						<img style="max-height: 480px; width: auto;" src="img/stackoverflow.png">
-						<a class="credit" href="https://twitter.com/wesnetmo/status/467200892941635584">Credit</a></img>
+						<div class="text-cont">
+							<p>
+								As we all know, the web is can be your best friend when learning a new technology. <br /><br />
+								Take a look at some online resources: <a href="https://angularjs.org/">AngularJS (v1.0)</a>, <a href="https://angular.io/">AngularJS (v2.0)</a>, <a href="http://www.w3schools.com/angular/angular_intro.asp">W3Schools</a> and have a play.
+							</p>
+						</div>
+
+						<div class="img">
+							<img style="max-height: 480px; width: auto;" src="img/stackoverflow.png">
+							<a class="credit" href="https://twitter.com/wesnetmo/status/467200892941635584">Credit</a></img>
+						</div>
+
 					</div>
 
 					<p>
@@ -772,7 +763,6 @@ myApp.controller('myController', function($scope) {
 						<li>User demographics</li>
 						<li>Browser usage</li>
 						<li>Platform &amp; screen-size usage</li>
-						<li>Feature/page popularity</li>
 						<li>Plus much more.</li>
 					</ul>
 
@@ -874,9 +864,6 @@ myApp.controller('myController', function($scope) {
 
 					<h2>Exercise 4: Speed Research</h2>
 
-					<div class="img-cont float">
-
-						<div class="text-cont">
 
 							<p>You have <span id="time2"><strong>2 mins and 32 secs</strong></span> to find out answers to the following questions:</p>
 
@@ -885,16 +872,7 @@ myApp.controller('myController', function($scope) {
 								<li>What is the purpose of JSON?</li>
 							</ul>
 
-							<p class="fragment">I'm then going to pick on someone.</p>
-
-						</div>
-
-						<div class="img fragment">
-							<img style="max-height: 480px; width: auto;" src="img/soz-meme.jpg">
-							<a class="credit" href="https://memegenerator.net/instance2/5219698">Credit</a></img>
-						</div>
-
-					</div>
+							<p>I'm then going to pick on someone.</p>
 
 				</section>
 

@@ -29,13 +29,13 @@ h2 {
 
 }
 
-p, ul, ol, li, span, input {
+p, ul, ol, li, span, input, a {
 
   font-weight: 200 !important;
 
 }
 
-p, ul, ol, li {
+p, ul, ol, li, a {
   font-size: 0.7rem !important;
 }
 
@@ -58,6 +58,12 @@ span.bold {
 
 span.italic {
   font-style: italic !important;
+}
+
+.reveal small a {
+
+  font-size: 0.4rem !important;
+
 }
 
 pre {
@@ -103,7 +109,7 @@ div.text-cont {
   float: left;
   max-width: 48% !important;
   margin-right: 10px;
-  
+
 }
 
 div.img {
